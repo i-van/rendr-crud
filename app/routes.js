@@ -1,7 +1,8 @@
 module.exports = function(match) {
-  match('',                   'home#index');
-  match('repos',              'repos#index');
-  match('repos/:owner/:name', 'repos#show');
-  match('users'       ,       'users#index');
-  match('users/:login',       'users#show');
+  match('',                         'home#index');
+  match('users',                    'users#index');
+  match('users/:page',              'users#index');
+//  match('users/create',             'users#create');
+//  match('users/edit/:id',           'users#edit');
+//  match('users/remove/:id',         'users#remove');
 };
