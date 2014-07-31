@@ -18,12 +18,8 @@ app.use(express.bodyParser());
  */
 var dataAdapterConfig = {
   'default': {
-    host: 'api.github.com',
-    protocol: 'https'
-  },
-  'travis-ci': {
-    host: 'api.travis-ci.org',
-    protocol: 'https'
+    host: 'localhost:3000',
+    protocol: 'http'
   }
 };
 
