@@ -1,23 +1,9 @@
 var path = require('path');
 
-var stylesheetsDir = 'assets/stylesheets';
-
 module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    stylus: {
-      compile: {
-        options: {
-          paths: [stylesheetsDir],
-          'include css': true
-        },
-        files: {
-          'public/styles.css': stylesheetsDir + '/index.styl'
-        }
-      }
-    },
 
     handlebars: {
       compile: {
@@ -53,13 +39,6 @@ module.exports = function(grunt) {
         options: {
           interrupt: true
         }
-      },
-      stylesheets: {
-        files: [stylesheetsDir + '/**/*.styl', stylesheetsDir + '/**/*.css'],
-        tasks: ['stylus'],
-        options: {
-          interrupt: true
-        }
       }
     },
 
@@ -86,20 +65,12 @@ module.exports = function(grunt) {
       app: {
         src: [ 'app/**/*.js' ],
         dest: 'public/mergedAssets.js'
-      },
-      tests: {
-        src: [
-          'test/helper.js',
-          'test/app/**/*.js'
-        ],
-        dest: 'public/testBundle.js'
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
-  grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('runNode', function () {
@@ -114,8 +85,7 @@ module.exports = function(grunt) {
     });
   });
 
-
-  grunt.registerTask('compile', ['handlebars', 'browserify', 'stylus']);
+  grunt.registerTask('compile', ['handlebars', 'browserify']);
 
   // Run the server and watch for file changes
   grunt.registerTask('server', ['compile', 'runNode', 'watch']);
@@ -124,4 +94,3 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['compile']);
 
 };
-
