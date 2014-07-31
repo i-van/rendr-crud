@@ -1,3 +1,4 @@
 .idea
 node_modules
 public/mergedAssets.js
+app/templates/compiledTemplates.js
