@@ -10,13 +10,7 @@ module.exports = {
     });
   },
 
-  show: function(params, callback) {
-    var spec = {
-      model: {model: 'User', params: params},
-      repos: {collection: 'Repos', params: {user: params.login}}
-    };
-    this.app.fetch(spec, function(err, result) {
-      callback(err, result);
-    });
+  create: function(params, callback) {
+    callback();
   }
 };
