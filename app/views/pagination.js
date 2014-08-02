@@ -3,6 +3,7 @@ var BaseView = require('./base')
   , _ = require('underscore');
 
 module.exports = BaseView.extend({
+    tagName: 'ul',
     className: 'pagination',
     getTemplateData: function() {
         var options     = this.options.pagination
