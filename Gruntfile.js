@@ -57,7 +57,11 @@ module.exports = function(grunt) {
         ],
         shim: {
           jquery: {
-            path: 'assets/vendor/jquery-1.9.1.min.js',
+            path: 'assets/vendor/jquery-1.11.1.min.js',
+            exports: '$'
+          },
+          bootstrap: {
+            path: 'assets/vendor/bootstrap-3.2.0.min.js',
             exports: '$'
           }
         }

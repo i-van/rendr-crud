@@ -1,5 +1,8 @@
 var BaseClientRouter = require('rendr/client/router');
 
+// init bootstrap
+require('bootstrap');
+
 var Router = module.exports = function Router(options) {
   BaseClientRouter.call(this, options);
 };
