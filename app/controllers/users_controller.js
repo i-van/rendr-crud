@@ -12,5 +12,14 @@ module.exports = {
 
   create: function(params, callback) {
     callback();
+  },
+
+  edit: function(params, callback) {
+    var spec = {
+      model: {model: 'User', params: params}
+    };
+    this.app.fetch(spec, function(err, result) {
+      callback(err, result);
+    });
   }
 };
