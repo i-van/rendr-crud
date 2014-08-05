@@ -41,8 +41,7 @@ module.exports = BaseView.extend({
         });
     },
     goToList: function() {
-        // @todo: add alert
-//        Alert.success('User was successfully saved');
+        this.alert('User was successfully saved');
         this.app.router.redirectTo('/users');
     }
 });
