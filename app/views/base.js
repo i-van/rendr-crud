@@ -10,8 +10,11 @@ module.exports = RendrView.extend({
             type = 'danger';
         }
 
-        var html = this._renderTemplate('alert', { message: message, type: type });
-        return $(html).alert().appendTo('#alerts');
+        var html = this._renderTemplate('alert', { message: message, type: type })
+          , $el = $(html).alert().appendTo('#alerts');
+        $('body').scrollTop(0);
+
+        return $el;
     },
     _renderTemplate: function(template, data) {
         return rendrHandlebars({ entryPath: '' }).getTemplate(template)(data || {});
