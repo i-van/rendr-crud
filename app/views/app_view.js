@@ -9,11 +9,17 @@ module.exports = BaseAppView.extend({
 //        });
 
         var links = this.$('.nav a');
-        this.app.router.on('action:start', function() {
-            var target = links.filter('[href="' + location.pathname + '"]');
-
+        this.app.router.on('action:start', function(route) {
             links.parent().removeClass('active');
-            target.parent().addClass('active');
+            links.each(function() {
+                var $el = $(this)
+                  , action = $el.data('action')
+                  , controller = $el.data('controller');
+
+                if (route.controller === controller && route.action === action) {
+                    $el.parent().addClass('active');
+                }
+            });
         });
     }
 });
