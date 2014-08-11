@@ -18,7 +18,7 @@ module.exports = {
     var spec = {
       model: {model: 'User', params: params}
     };
-    this.app.fetch(spec, function(err, result) {
+    this.app.fetch(spec, { readFromCache: false }, function(err, result) {
       callback(err, result);
     });
   }
