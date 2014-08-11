@@ -5,7 +5,7 @@ module.exports = {
     var spec = {
       collection: {collection: 'Users', params: params}
     };
-    this.app.fetch(spec, function(err, result) {
+    this.app.fetch(spec, { readFromCache: false }, function(err, result) {
       callback(err, result);
     });
   },

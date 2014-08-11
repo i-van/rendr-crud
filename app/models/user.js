@@ -5,6 +5,8 @@ module.exports = Base.extend({
       // @todo: do something with it..
       if (this.get('id')) {
           return '/users/:id';
+      } else if (this.get('_id')) {
+          return '/users/:_id';
       }
       return '/users';
   },
