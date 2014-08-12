@@ -14,9 +14,11 @@
     "rendr": "0.5.0",
 
     "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
     "grunt-browserify": "1.3.2",
     "grunt-contrib-handlebars": "0.8.0",
-    "grunt-contrib-watch": "0.6.1"
+    "grunt-contrib-watch": "0.6.1",
+    "nodemon": "1.2.1"
   },
   "private": true
 }
