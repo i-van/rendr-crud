@@ -5,15 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/.bin/grunt"
+    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/grunt"
   },
   "dependencies": {
     "express": "~3",
     "underscore": "~1.5.2",
     "rendr-handlebars": "0.2.0",
-    "rendr": "0.5.0"
-  },
-  "devDependencies": {
+    "rendr": "0.5.0",
+
     "bower": "1.2.8",
     "grunt": "~0.4.1",
     "grunt-browserify": "~1.2.9",
