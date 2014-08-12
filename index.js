@@ -18,7 +18,7 @@ app.use(express.bodyParser());
  */
 var dataAdapterConfig = {
   'default': {
-    host: 'localhost:3000',
+    host: process.env.API_URL || 'localhost:3000',
     protocol: 'http'
   }
 };
